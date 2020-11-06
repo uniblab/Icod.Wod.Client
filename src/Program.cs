@@ -5,6 +5,8 @@ namespace Icod.Wod.Client {
 
 	public static class Program {
 
+		public const System.Int32 BufferSize = 16384;
+
 		[System.STAThread]
 		public static System.Int32 Main( System.String[] args ) {
 			System.Int32 output = 1;
@@ -69,7 +71,7 @@ namespace Icod.Wod.Client {
 		}
 
 		private static Icod.Wod.WorkOrder GetSchematic( System.String filePathName ) {
-			using ( var file = new System.IO.FileStream( filePathName, System.IO.FileMode.Open, System.IO.FileAccess.Read, System.IO.FileShare.Read, 32768, System.IO.FileOptions.SequentialScan ) ) {
+			using ( var file = new System.IO.FileStream( filePathName, System.IO.FileMode.Open, System.IO.FileAccess.Read, System.IO.FileShare.Read, BufferSize, System.IO.FileOptions.SequentialScan ) ) {
 				using ( var reader = System.Xml.XmlReader.Create( file ) ) {
 					return ( new System.Xml.Serialization.XmlSerializer( typeof( Icod.Wod.WorkOrder ) ).Deserialize( reader ) as Icod.Wod.WorkOrder );
 				}
