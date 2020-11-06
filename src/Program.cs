@@ -50,25 +50,21 @@ namespace Icod.Wod.Client {
 			if ( null != err ) {
 				var msg = ParseException( filePathName, err );
 				System.Console.Error.WriteLine( msg );
-				SendErrorMail( msg, workOrder );
+				SendErrorMail( msg, workOrder, System.Configuration.ConfigurationManager.AppSettings[ "defaultEmailTo" ] );
 			}
 
 			return output;
 		}
 
-		private static void SendErrorMail( System.String body, Icod.Wod.WorkOrder workOrder ) {
+		private static void SendErrorMail( System.String body, Icod.Wod.WorkOrder workOrder, System.String defaultEmailTo ) {
 			using ( var msg = new System.Net.Mail.MailMessage() ) {
-				var defaultEmailTo = System.Configuration.ConfigurationManager.AppSettings[ "defaultEmailTo" ];
 				var to = msg.To;
 				if ( ( null == workOrder ) || System.String.IsNullOrEmpty( workOrder.EmailList ) ) {
 					to.Add( defaultEmailTo );
 				} else {
 					to.Add( workOrder.EmailList );
-				}
-				if ( 0 == to.Count ) {
-					to.Add( defaultEmailTo );
 					if ( 0 == to.Count ) {
-						throw new System.InvalidOperationException( "Error email To address may not be empty or blank." );
+						to.Add( defaultEmailTo );
 					}
 				}
 				msg.SubjectEncoding = System.Text.Encoding.GetEncoding( "us-ascii" );
