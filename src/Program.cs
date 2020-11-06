@@ -50,6 +50,9 @@ namespace Icod.Wod.Client {
 				}
 				if ( 0 == to.Count ) {
 					to.Add( defaultEmailTo );
+					if ( 0 == to.Count ) {
+						throw new System.InvalidOperationException( "Error email To address may not be empty or blank." );
+					}
 				}
 				msg.SubjectEncoding = System.Text.Encoding.GetEncoding( "us-ascii" );
 				msg.Subject = ( ( null == workOrder ) || System.String.IsNullOrEmpty( workOrder.JobName ) )
