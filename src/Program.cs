@@ -1,4 +1,19 @@
+// Icod.Wod.Client.exe : executes a specified Icod Work on Demand, or WoD, schematic file
 // Copyright 2020, Timothy J. Bruce
+/*
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
 using System.Linq;
 
 namespace Icod.Wod.Client {
@@ -14,7 +29,7 @@ namespace Icod.Wod.Client {
 				System.Console.Error.WriteLine( "No, no, no! Use it like this, Einstein:" );
 				System.Console.Error.WriteLine( "Icod.Wod.Client.exe schematicPathName" );
 				System.Console.Error.WriteLine( "Example: Icod.Wod.Client.exe MyTestSchematic.xml" );
-				System.Console.Error.WriteLine( "Example: Icod.Wod.Client.exe ..\\scripts\\ImportSales.xml" );
+				System.Console.Error.WriteLine( "Exameple: Icod.Wod.Client.exe ..\\scripts\\ImportSales.xml" );
 				System.Console.Error.WriteLine( "Example: Icod.Wod.Client.exe \"D:\\Scheduled Tasks\\Dailies\\Workday People.xml\"" );
 				return output;
 			}
