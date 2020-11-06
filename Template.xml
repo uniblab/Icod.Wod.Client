@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkOrder xmlns="http://Icod.Wod" xsi:schemaLocation="http://Icod.Wod https://raw.githubusercontent.com/uniblab/Icod.Wod/master/schema0.xsd"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	jobName="Work on Demand Template"
+	emailTo="%env:username%@%env:userdomain%"
+>
+
+	<connectionStrings />
+
+	<sfCredentials />
+
+	<variables />
+
+	<steps>
+	</steps>
+
+</WorkOrder>
