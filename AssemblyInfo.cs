@@ -1,4 +1,4 @@
-﻿// Copyright 2022, Timothy J. Bruce
+﻿// Copyright 2023, Timothy J. Bruce
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "Icod" )]
 [assembly: AssemblyProduct( "Icod.Wod.Client" )]
-[assembly: AssemblyCopyright( "Copyright 2022, Timothy J. Bruce" )]
+[assembly: AssemblyCopyright( "Copyright 2023, Timothy J. Bruce" )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 
