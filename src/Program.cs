@@ -1,5 +1,6 @@
-// Icod.Wod.Client.exe : executes a specified Icod Work on Demand, or WoD, schematic file
+// Icod.Wod.Client.exe executes Work on Demand (.wod) schematics.
 // Copyright 2023, Timothy J. Bruce
+
 /*
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -14,6 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
+
 using System.Linq;
 
 namespace Icod.Wod.Client {
@@ -24,16 +26,19 @@ namespace Icod.Wod.Client {
 
 		[System.STAThread]
 		public static System.Int32 Main( System.String[] args ) {
-			System.Int32 output = 1;
-			if ( ( null == args ) || ( 1 != args.Length ) ) {
-				System.Console.Error.WriteLine( "No, no, no! Use it like this, Einstein:" );
-				System.Console.Error.WriteLine( "Icod.Wod.Client.exe schematicPathName" );
-				System.Console.Error.WriteLine( "Example: Icod.Wod.Client.exe MyTestSchematic.xml" );
-				System.Console.Error.WriteLine( "Exameple: Icod.Wod.Client.exe ..\\scripts\\ImportSales.xml" );
-				System.Console.Error.WriteLine( "Example: Icod.Wod.Client.exe \"D:\\Scheduled Tasks\\Dailies\\Workday People.xml\"" );
-				return output;
+			if ( null == args ) {
+				args = new System.String[ 0 ];
+			}
+			var len = args.Length;
+			if ( ( 1 <= len ) && ( new System.String[] { "--copyright", "-c", "/c" }.Contains( args[ 0 ], System.StringComparer.OrdinalIgnoreCase ) ) ) {
+				PrintCopyright();
+				return 1;
+			} else if ( ( 1 <= len ) && ( new System.String[] { "--help", "-h", "/h" }.Contains( args[ 0 ], System.StringComparer.OrdinalIgnoreCase ) ) ) {
+				PrintUsage();
+				return 1;
 			}
 
+			System.Int32 output = 1;
 			System.Exception err = null;
 			Icod.Wod.WorkOrder workOrder = null;
 			var filePathName = args[ 0 ];
@@ -54,6 +59,41 @@ namespace Icod.Wod.Client {
 			}
 
 			return output;
+		}
+
+		private static void PrintUsage() {
+			System.Console.Error.WriteLine( "No, no, no! Use it like this, Einstein:" );
+			System.Console.Error.WriteLine( "Icod.Wod.Client.exe --help" );
+			System.Console.Error.WriteLine( "Icod.Wod.Client.exe --copyright" );
+			System.Console.Error.WriteLine( "Icod.Wod.Client.exe schematicPathName" );
+			System.Console.Error.WriteLine( "Icod.Wod.Client.exe executes Work on Demand (.wod) schematics." );
+			System.Console.Error.WriteLine( "schematicPathName may be a relative or absolute path." );
+			System.Console.Error.WriteLine( "Example: Icod.Wod.Client.exe MyTestSchematic.xml" );
+			System.Console.Error.WriteLine( "Example: Icod.Wod.Client.exe ..\\scripts\\ImportSales.xml" );
+			System.Console.Error.WriteLine( "Example: Icod.Wod.Client.exe \"D:\\Scheduled Tasks\\Dailies\\Workday People.xml\"" );
+		}
+		private static void PrintCopyright() {
+			var copy = new System.String[] {
+				"Icod.Wod.Client.exe executes Work on Demand (.wod) schematics.",
+				"Copyright (C) 2023 Timothy J. Bruce",
+				"",
+				"",
+				"This program is free software: you can redistribute it and / or modify",
+				"it under the terms of the GNU General Public License as published by",
+				"the Free Software Foundation, either version 3 of the License, or",
+				"( at your option ) any later version.",
+				"",
+				"This program is distributed in the hope that it will be useful,",
+				"but WITHOUT ANY WARRANTY; without even the implied warranty of",
+				"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the",
+				"GNU General Public License for more details.",
+				"",
+				"You should have received a copy of the GNU General Public License",
+				"along with this program.If not, see <https://www.gnu.org/licenses/>."
+			};
+			foreach ( var line in copy ) {
+				System.Console.WriteLine( line );
+			}
 		}
 
 		private static void SendErrorMail( System.String body, Icod.Wod.WorkOrder workOrder, System.String defaultEmailTo ) {
