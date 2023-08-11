@@ -1,16 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2023, Timothy J. Bruce -->
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
+<!--
+    Icod.Wod.Client.exe executes Work on Demand (.wod) schematics.
+    Copyright (C) 2023 Timothy J. Bruce
+-->
+<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
     <RootNamespace>Icod.Wod.Client</RootNamespace>
     <AssemblyName>Icod.Wod.Client</AssemblyName>
     <ProjectGuid>{9FD26799-891E-4546-82E7-977CC8845DB0}</ProjectGuid>
     <OutputPath>bin\$(Configuration)\</OutputPath>
-    <DocumentationFile>bin\$(Configuration)\$(AssemblyName).XML</DocumentationFile>
-    <StartupObject />
+	<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+	<StartupObject />
     <OutputType>EXE</OutputType>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -23,13 +27,11 @@
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Local-Debug' ">
-  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Staging' ">
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release-net472' ">
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration.Contains( &quot;Debug&quot; ))' ">
     <ErrorReport>prompt</ErrorReport>
@@ -72,7 +74,7 @@
       <DependentUpon>App.config</DependentUpon>
       <IsTransformFile>true</IsTransformFile>
     </None>
-    <None Include="App.Release-net472.config">
+    <None Include="App.Release.config">
       <DependentUpon>App.config</DependentUpon>
       <IsTransformFile>true</IsTransformFile>
     </None>
@@ -84,11 +86,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="README.md" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="src\Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Template.xml">
@@ -102,22 +99,6 @@
       <Project>{eb964b27-be3e-48bb-9e2d-e22134eec738}</Project>
       <Name>Icod.Wod</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.OracleClient" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Runtime" />
-    <Reference Include="System.Runtime.InteropServices" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.ServiceProcess" />
-    <Reference Include="System.Transactions" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions">
