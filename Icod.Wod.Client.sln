@@ -3,28 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Icod.Wod.Client", "Icod.Wod.Client.csproj", "{9FD26799-891E-4546-82E7-977CC8845DB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Icod.Wod.Client", "Icod.Wod.Client.csproj", "{9FD26799-891E-4546-82E7-977CC8845DB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Icod.Wod", "..\Icod.Wod\Icod.Wod.csproj", "{EB964B27-BE3E-48BB-9E2D-E22134EEC738}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Icod.Wod", "..\Icod.Wod\Icod.Wod.csproj", "{EB964B27-BE3E-48BB-9E2D-E22134EEC738}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Staging|Any CPU = Staging|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9FD26799-891E-4546-82E7-977CC8845DB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9FD26799-891E-4546-82E7-977CC8845DB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9FD26799-891E-4546-82E7-977CC8845DB0}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{9FD26799-891E-4546-82E7-977CC8845DB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FD26799-891E-4546-82E7-977CC8845DB0}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
 		{9FD26799-891E-4546-82E7-977CC8845DB0}.Staging|Any CPU.Build.0 = Staging|Any CPU
 		{9FD26799-891E-4546-82E7-977CC8845DB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FD26799-891E-4546-82E7-977CC8845DB0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EB964B27-BE3E-48BB-9E2D-E22134EEC738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EB964B27-BE3E-48BB-9E2D-E22134EEC738}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB964B27-BE3E-48BB-9E2D-E22134EEC738}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB964B27-BE3E-48BB-9E2D-E22134EEC738}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EB964B27-BE3E-48BB-9E2D-E22134EEC738}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
 		{EB964B27-BE3E-48BB-9E2D-E22134EEC738}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{EB964B27-BE3E-48BB-9E2D-E22134EEC738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB964B27-BE3E-48BB-9E2D-E22134EEC738}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

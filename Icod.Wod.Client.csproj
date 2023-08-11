@@ -4,128 +4,129 @@
     Copyright (C) 2023 Timothy J. Bruce
 -->
 <Project Sdk="Microsoft.NET.Sdk">
-<PropertyGroup>
+	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-    <RootNamespace>Icod.Wod.Client</RootNamespace>
-    <AssemblyName>Icod.Wod.Client</AssemblyName>
-    <ProjectGuid>{9FD26799-891E-4546-82E7-977CC8845DB0}</ProjectGuid>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
-	<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-	<StartupObject />
-    <OutputType>EXE</OutputType>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Staging' ">
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration.Contains( &quot;Debug&quot; ))' ">
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>2</WarningLevel>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration.Contains( &quot;Staging&quot; ))' ">
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>3</WarningLevel>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <DefineConstants>TRACE</DefineConstants>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration.Contains( &quot;Release&quot; ))' ">
-    <AssemblyKeyContainerName>Icod</AssemblyKeyContainerName>
-    <AssemblyOriginatorKeyFile>..\STRONG_NAME_KEY\Icod.snk</AssemblyOriginatorKeyFile>
-    <SignAssembly>true</SignAssembly>
-    <DelaySign>false</DelaySign>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Include="App.config">
-      <TransformOnBuild>true</TransformOnBuild>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="App.Debug.config">
-      <DependentUpon>App.config</DependentUpon>
-      <IsTransformFile>true</IsTransformFile>
-    </None>
-    <None Include="App.Local-Debug.config">
-      <DependentUpon>App.config</DependentUpon>
-      <IsTransformFile>true</IsTransformFile>
-    </None>
-    <None Include="App.Release.config">
-      <DependentUpon>App.config</DependentUpon>
-      <IsTransformFile>true</IsTransformFile>
-    </None>
-    <None Include="App.Staging.config">
-      <DependentUpon>App.config</DependentUpon>
-      <IsTransformFile>true</IsTransformFile>
-    </None>
-    <None Include="Icod.Wod.Client.License">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="README.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Template.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <TransformOnBuild>true</TransformOnBuild>
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Icod.Wod\Icod.Wod.csproj">
-      <Project>{eb964b27-be3e-48bb-9e2d-e22134eec738}</Project>
-      <Name>Icod.Wod</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions">
-      <Version>7.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.SlowCheetah">
-      <Version>4.0.50</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Newtonsoft.Json">
-      <Version>13.0.3</Version>
-    </PackageReference>
-    <PackageReference Include="Npgsql">
-      <Version>7.0.4</Version>
-    </PackageReference>
-    <PackageReference Include="Oracle.ManagedDataAccess">
-      <Version>21.11.0</Version>
-    </PackageReference>
-    <PackageReference Include="System.Configuration.ConfigurationManager">
-      <Version>7.0.0</Version>
-    </PackageReference>
-    <PackageReference Include="System.Diagnostics.DiagnosticSource">
-      <Version>7.0.2</Version>
-    </PackageReference>
-    <PackageReference Include="System.Text.Json">
-      <Version>7.0.3</Version>
-    </PackageReference>
-  </ItemGroup>
+		<RootNamespace>Icod.Wod.Client</RootNamespace>
+		<AssemblyName>Icod.Wod.Client</AssemblyName>
+		<ProjectGuid>{9FD26799-891E-4546-82E7-977CC8845DB0}</ProjectGuid>
+		<OutputPath>bin\$(Configuration)\</OutputPath>
+		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+		<StartupObject />
+		<OutputType>EXE</OutputType>
+		<TargetFrameworkProfile>
+		</TargetFrameworkProfile>
+		<FileAlignment>512</FileAlignment>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<NuGetPackageImportStamp>
+		</NuGetPackageImportStamp>
+		<Configurations>Debug;Staging;Release</Configurations>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Staging' ">
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration.Contains( &quot;Debug&quot; ))' ">
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>2</WarningLevel>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<SignAssembly>false</SignAssembly>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration.Contains( &quot;Staging&quot; ))' ">
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>3</WarningLevel>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<DefineConstants>TRACE</DefineConstants>
+		<SignAssembly>false</SignAssembly>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration.Contains( &quot;Release&quot; ))' ">
+		<AssemblyKeyContainerName>Icod</AssemblyKeyContainerName>
+		<AssemblyOriginatorKeyFile>..\STRONG_NAME_KEY\Icod.snk</AssemblyOriginatorKeyFile>
+		<SignAssembly>true</SignAssembly>
+		<DelaySign>false</DelaySign>
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="App.config">
+			<TransformOnBuild>true</TransformOnBuild>
+			<SubType>Designer</SubType>
+		</None>
+		<None Include="App.Debug.config">
+			<DependentUpon>App.config</DependentUpon>
+			<IsTransformFile>true</IsTransformFile>
+		</None>
+		<None Include="App.Local-Debug.config">
+			<DependentUpon>App.config</DependentUpon>
+			<IsTransformFile>true</IsTransformFile>
+		</None>
+		<None Include="App.Release.config">
+			<DependentUpon>App.config</DependentUpon>
+			<IsTransformFile>true</IsTransformFile>
+		</None>
+		<None Include="App.Staging.config">
+			<DependentUpon>App.config</DependentUpon>
+			<IsTransformFile>true</IsTransformFile>
+		</None>
+		<None Include="Icod.Wod.Client.License">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Include="README.md" />
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="Template.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TransformOnBuild>true</TransformOnBuild>
+			<SubType>Designer</SubType>
+		</Content>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Icod.Wod\Icod.Wod.csproj">
+			<Project>{eb964b27-be3e-48bb-9e2d-e22134eec738}</Project>
+			<Name>Icod.Wod</Name>
+		</ProjectReference>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions">
+			<Version>7.0.1</Version>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.SlowCheetah">
+			<Version>4.0.50</Version>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Newtonsoft.Json">
+			<Version>13.0.3</Version>
+		</PackageReference>
+		<PackageReference Include="Npgsql">
+			<Version>7.0.4</Version>
+		</PackageReference>
+		<PackageReference Include="Oracle.ManagedDataAccess">
+			<Version>21.11.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Configuration.ConfigurationManager">
+			<Version>7.0.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Diagnostics.DiagnosticSource">
+			<Version>7.0.2</Version>
+		</PackageReference>
+		<PackageReference Include="System.Text.Json">
+			<Version>7.0.3</Version>
+		</PackageReference>
+	</ItemGroup>
 </Project>
