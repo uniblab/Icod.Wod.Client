@@ -26,9 +26,7 @@ namespace Icod.Wod.Client {
 
 		[System.STAThread]
 		public static System.Int32 Main( System.String[] args ) {
-			if ( null == args ) {
-				args = new System.String[ 0 ];
-			}
+			args ??= System.Array.Empty<System.String>();
 			var len = args.Length;
 			if ( ( 1 <= len ) && ( new System.String[] { "--copyright", "-c", "/c" }.Contains( args[ 0 ], System.StringComparer.OrdinalIgnoreCase ) ) ) {
 				PrintCopyright();
@@ -39,12 +37,12 @@ namespace Icod.Wod.Client {
 			}
 
 			System.Int32 output = 1;
-			System.Exception err = null;
-			Icod.Wod.WorkOrder workOrder = null;
+			System.Exception? err = null;
+			Icod.Wod.WorkOrder? workOrder = null;
 			var filePathName = args[ 0 ];
 			try {
 				workOrder = GetSchematic( filePathName );
-				if ( null == workOrder ) {
+				if ( workOrder is null ) {
 					throw new System.ApplicationException( "WorkOrder null after deserialization." );
 				}
 				workOrder.Run();
@@ -52,10 +50,10 @@ namespace Icod.Wod.Client {
 			} catch ( System.Exception e ) {
 				err = e;
 			}
-			if ( null != err ) {
+			if ( err is not null ) {
 				var msg = ParseException( filePathName, err );
 				System.Console.Error.WriteLine( msg );
-				SendErrorMail( msg, workOrder, System.Configuration.ConfigurationManager.AppSettings[ "defaultEmailTo" ] );
+				SendErrorMail( msg, workOrder, System.Configuration.ConfigurationManager.AppSettings[ "defaultEmailTo" ]! );
 			}
 
 			return output;
@@ -96,7 +94,7 @@ namespace Icod.Wod.Client {
 			}
 		}
 
-		private static void SendErrorMail( System.String body, Icod.Wod.WorkOrder workOrder, System.String defaultEmailTo ) {
+		private static void SendErrorMail( System.String body, Icod.Wod.WorkOrder? workOrder, System.String defaultEmailTo ) {
 			using ( var msg = new System.Net.Mail.MailMessage() ) {
 				var to = msg.To;
 				if ( ( null == workOrder ) || System.String.IsNullOrEmpty( workOrder.EmailList ) ) {
@@ -108,7 +106,7 @@ namespace Icod.Wod.Client {
 					}
 				}
 				msg.SubjectEncoding = System.Text.Encoding.GetEncoding( "us-ascii" );
-				msg.Subject = ( ( null == workOrder ) || System.String.IsNullOrEmpty( workOrder.JobName ) )
+				msg.Subject = ( ( workOrder is null ) || System.String.IsNullOrEmpty( workOrder.JobName ) )
 					? "Work Order error!"
 					: workOrder.JobName + " Work Order error!"
 				;
@@ -121,7 +119,7 @@ namespace Icod.Wod.Client {
 			}
 		}
 
-		private static Icod.Wod.WorkOrder GetSchematic( System.String filePathName ) {
+		private static Icod.Wod.WorkOrder? GetSchematic( System.String filePathName ) {
 			using ( var file = new System.IO.FileStream( filePathName, System.IO.FileMode.Open, System.IO.FileAccess.Read, System.IO.FileShare.Read, BufferSize, System.IO.FileOptions.SequentialScan ) ) {
 				using ( var reader = System.Xml.XmlReader.Create( file ) ) {
 					return ( new System.Xml.Serialization.XmlSerializer( typeof( Icod.Wod.WorkOrder ) ).Deserialize( reader ) as Icod.Wod.WorkOrder );
@@ -129,9 +127,9 @@ namespace Icod.Wod.Client {
 			}
 		}
 
-		private static System.String ParseException( System.String filePathName, System.Exception e ) {
-			if ( null == e ) {
-				throw new System.ArgumentNullException( "e" );
+		private static System.String ParseException( System.String filePathName, System.Exception? e ) {
+			if ( e is null ) {
+				throw new System.ArgumentNullException( nameof( e ) );
 			}
 
 			var output = new System.Text.StringBuilder();
@@ -146,7 +144,7 @@ namespace Icod.Wod.Client {
 			do {
 				output = output.Append( "Message: " );
 				output = output.AppendLine( e.Message ?? System.String.Empty );
-				output = output.AppendLine( e.GetType().AssemblyQualifiedName.ToString() );
+				output = output.AppendLine( e.GetType().AssemblyQualifiedName?.ToString() );
 				if ( 0 < e.Data.Keys.Count ) {
 					output = output.AppendLine( "Data: " );
 					foreach ( var k in e.Data.Keys ) {
