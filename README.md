@@ -2,17 +2,17 @@
 Icod.Wod.Client.exe executes Work on Demand (.wod) schematics.
 
 ## Usage
-`Icod.Wod.Client.exe --help`
+`Icod.Wod.Client.exe (-h | --help | /help)`
 Displays this text.
 
-`Icod.Wod.Client.exe --copyright`
+`Icod.Wod.Client.exe (-c | --copyright | /copyright)`
 Displays copyright and licensing information.
 
 `Icod.Wod.Client.exe schematicPathName`
 Icod.Wod.Client.exe executes Work on Demand (.wod) schematics.
 schematicPathName may be a relative or absolute path. 
 Examples:
-```sh
+``` sh
 Icod.Wod.Client.exe MyTestSchematic.xml
 Icod.Wod.Client.exe ..\scripts\ImportSales.xml
 Icod.Wod.Client.exe "D:\Scheduled Tasks\Dailies\Workday People.xml"

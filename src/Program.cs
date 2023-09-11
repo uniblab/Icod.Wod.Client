@@ -26,12 +26,23 @@ namespace Icod.Wod.Client {
 
 		[System.STAThread]
 		public static System.Int32 Main( System.String[] args ) {
-			args ??= System.Array.Empty<System.String>();
+			var processor = new Icod.Argh.Processor(
+				new Icod.Argh.Definition[] {
+					new Icod.Argh.Definition( "help", new System.String[] { "-h", "--help", "/help" } ),
+					new Icod.Argh.Definition( "copyright", new System.String[] { "-c", "--copyright", "/copyright" } ),
+				},
+				System.StringComparer.OrdinalIgnoreCase
+			);
+			processor.Parse( args );
+
 			var len = args.Length;
-			if ( ( 1 <= len ) && ( new System.String[] { "--copyright", "-c", "/c" }.Contains( args[ 0 ], System.StringComparer.OrdinalIgnoreCase ) ) ) {
+			if ( processor.Contains( "help" ) ) {
+				PrintUsage();
+				return 1;
+			} else if ( processor.Contains( "copyright" ) ) {
 				PrintCopyright();
 				return 1;
-			} else if ( ( 1 <= len ) && ( new System.String[] { "--help", "-h", "/h" }.Contains( args[ 0 ], System.StringComparer.OrdinalIgnoreCase ) ) ) {
+			} else if ( 1 != len ) {
 				PrintUsage();
 				return 1;
 			}
@@ -41,7 +52,7 @@ namespace Icod.Wod.Client {
 			Icod.Wod.WorkOrder? workOrder = null;
 			var filePathName = args[ 0 ];
 			try {
-				workOrder = GetSchematic( filePathName );
+				workOrder = GetSchematic( filePathName! );
 				if ( workOrder is null ) {
 					throw new System.ApplicationException( "WorkOrder null after deserialization." );
 				}
@@ -61,8 +72,8 @@ namespace Icod.Wod.Client {
 
 		private static void PrintUsage() {
 			System.Console.Error.WriteLine( "No, no, no! Use it like this, Einstein:" );
-			System.Console.Error.WriteLine( "Icod.Wod.Client.exe --help" );
-			System.Console.Error.WriteLine( "Icod.Wod.Client.exe --copyright" );
+			System.Console.Error.WriteLine( "Icod.Wod.Client.exe (-h | --help | /help)" );
+			System.Console.Error.WriteLine( "Icod.Wod.Client.exe (-c | --copyright | /copyright)" );
 			System.Console.Error.WriteLine( "Icod.Wod.Client.exe schematicPathName" );
 			System.Console.Error.WriteLine( "Icod.Wod.Client.exe executes Work on Demand (.wod) schematics." );
 			System.Console.Error.WriteLine( "schematicPathName may be a relative or absolute path." );
@@ -75,7 +86,6 @@ namespace Icod.Wod.Client {
 				"Icod.Wod.Client.exe executes Work on Demand (.wod) schematics.",
 				"Copyright (C) 2023 Timothy J. Bruce",
 				"",
-				"",
 				"This program is free software: you can redistribute it and / or modify",
 				"it under the terms of the GNU General Public License as published by",
 				"the Free Software Foundation, either version 3 of the License, or",
@@ -83,7 +93,7 @@ namespace Icod.Wod.Client {
 				"",
 				"This program is distributed in the hope that it will be useful,",
 				"but WITHOUT ANY WARRANTY; without even the implied warranty of",
-				"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the",
+				"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
 				"GNU General Public License for more details.",
 				"",
 				"You should have received a copy of the GNU General Public License",
