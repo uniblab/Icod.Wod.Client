@@ -1,5 +1,6 @@
 # Icod.Wod.Client
-Icod.Wod.Client.exe executes Work on Demand (.wod) schematics.
+Icod.Wod.Client.exe executes Work on Demand schematics.
+Copyright (C) 2023  Timothy J. Bruce
 
 ## Usage
 `Icod.Wod.Client.exe (-h | --help | /help)`
@@ -9,7 +10,7 @@ Displays this text.
 Displays copyright and licensing information.
 
 `Icod.Wod.Client.exe schematicPathName`
-Icod.Wod.Client.exe executes Work on Demand (.wod) schematics.
+Icod.Wod.Client.exe executes Work on Demand schematics.
 schematicPathName may be a relative or absolute path. 
 Examples:
 ``` sh
@@ -19,7 +20,7 @@ Icod.Wod.Client.exe "D:\Scheduled Tasks\Dailies\Workday People.xml"
 ```
 
 ## Copyright and Licensing
-Icod.Wod.Client.exe executes Work on Demand (.wod) schematics.
+Icod.Wod.Client.exe executes Work on Demand schematics.
 Copyright (C) 2023 Timothy J. Bruce
 
 This program is free software: you can redistribute it and/or modify

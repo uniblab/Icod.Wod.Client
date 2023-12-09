@@ -1,6 +1,6 @@
 /*
 	Icod.Wod.Client.exe : executes a specified Icod Work on Demand, or WoD, schematic file
-	Copyright 2023, Timothy J. Bruce
+	Copyright (C) 2023  Timothy J. Bruce
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
