@@ -4,7 +4,7 @@
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>"C:\Users\tbruce\XMLFile1.xml"</StartArguments>
+    <StartArguments>"\Users\unibl\XMLFile1.xml"</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Local-Debug|AnyCPU'">
     <StartArguments>"C:\Users\tbruce\XMLFile1.xml"</StartArguments>
