@@ -17,6 +17,7 @@ Examples:
 Icod.Wod.Client.exe MyTestSchematic.xml
 Icod.Wod.Client.exe ..\scripts\ImportSales.xml
 Icod.Wod.Client.exe "D:\Scheduled Tasks\Dailies\Workday People.xml"
+Icod.Wod.Client.exe \\some-server\some-share\rotate-log-files.xml
 ```
 
 ## Copyright and Licensing
@@ -35,4 +36,3 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
