@@ -1,6 +1,6 @@
 # Icod.Wod.Client
 Icod.Wod.Client.exe executes Work on Demand schematics.
-Copyright (C) 2023  Timothy J. Bruce
+Copyright (C) 2025  Timothy J. Bruce
 
 ## Usage
 `Icod.Wod.Client.exe (-h | --help | /help)`
@@ -22,7 +22,7 @@ Icod.Wod.Client.exe \\some-server\some-share\rotate-log-files.xml
 
 ## Copyright and Licensing
 Icod.Wod.Client.exe executes Work on Demand schematics.
-Copyright (C) 2023 Timothy J. Bruce
+Copyright (C) 2025 Timothy J. Bruce
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published 
