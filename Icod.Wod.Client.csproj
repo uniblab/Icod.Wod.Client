@@ -24,9 +24,9 @@
 		<Product>Icod.Wod.Client</Product>
 		<Copyright>Copyright (C) 2025  Timothy J. Bruce</Copyright>
 		<Description>Icod.Wod.Client.exe interprets and executes Icod.Wod schematic files.</Description>
-		<Version>4.7.2.0</Version>
-		<FileVersion>4.7.2.0</FileVersion>
-		<InformationalVersion>4.7.2.0</InformationalVersion>
+		<Version>4.0.0.0</Version>
+		<FileVersion>4.0.0.0</FileVersion>
+		<InformationalVersion>4.0.0.0</InformationalVersion>
 	</PropertyGroup>
 	<PropertyGroup>
 		<RootNamespace>Icod.Wod.Client</RootNamespace>
@@ -36,7 +36,6 @@
 		<DocumentationFile>bin\$(Configuration)\$(AssemblyName).XML</DocumentationFile>
 		<StartupObject />
 		<OutputType>EXE</OutputType>
-		<!--<TargetFrameworks>net472;net48;net481;netcoreapp3.1;net5.0;net6.0;net7.0;net8.0;net9.0;</TargetFrameworks>-->
 		<TargetFrameworks>net472;net48;net481;netcoreapp3.1;net5.0;net6.0;net7.0;net8.0;net9.0;</TargetFrameworks>
 		<TargetFrameworkProfile>
 		</TargetFrameworkProfile>
