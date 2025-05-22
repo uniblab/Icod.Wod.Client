@@ -1,19 +1,9 @@
 ﻿// Copyright (C) 2025  Timothy J. Bruce
-using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle( "Icod.Wod.Client" )]
-[assembly: AssemblyDescription( "Client program to execute Icod Work on Demand Schematics" )]
-[assembly: AssemblyConfiguration( "" )]
-[assembly: AssemblyCompany( "Icod" )]
-[assembly: AssemblyProduct( "Icod.Wod.Client" )]
-[assembly: AssemblyCopyright( "Copyright (C) 2025  Timothy J. Bruce" )]
-[assembly: AssemblyTrademark( "" )]
-[assembly: AssemblyCulture( "" )]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
@@ -30,6 +20,3 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion( "4.0.0" )]
-[assembly: AssemblyInformationalVersion( "4.0.0.0" )]
-[assembly: AssemblyFileVersion( "4.0.0" )]
