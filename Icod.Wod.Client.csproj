@@ -127,8 +127,8 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
-		<PackageReference Include="Npgsql" Version="8.0.6" />
-		<PackageReference Include="Oracle.ManagedDataAccess" Version="23.7.0" />
+		<PackageReference Include="Npgsql" Version="8.0.7" />
+		<PackageReference Include="Oracle.ManagedDataAccess" Version="23.8.0" />
 	</ItemGroup>
 	<ItemGroup>
 		<EditorConfigFiles Remove=".editorconfig" />
