@@ -1,10 +1,13 @@
-# Remove the line below if you want to inherit .editorconfig settings from higher directories
+﻿# Remove the line below if you want to inherit .editorconfig settings from higher directories
 root = true
 
-[*.{cs,vb,xml}]
-# Indentation and spacing
-indent_size = 4
+[*.{cs,csproj,props,targets,xml}]
+end_of_line = crlf
+insert_final_newline = false
+trim_trailing_whitespace = true
+charset = utf-8
 indent_style = tab
+indent_size = 4
 tab_width = 4
 
 [*.{cs,vb}]
@@ -12,12 +15,6 @@ dotnet_diagnostic.IDE0130.severity = none
 
 # C# files
 [*.cs]
-
-#### Core EditorConfig Options ####
-
-# New line preferences
-end_of_line = crlf
-insert_final_newline = false
 
 #### .NET Code Actions ####
 

@@ -90,9 +90,9 @@ namespace Icod.Wod.Client {
 		}
 
 		private static System.String ParseException( System.String filePathName, System.Exception e ) {
-			if ( null == e ) {
-				throw new System.ArgumentNullException( "e" );
-			}
+#if DEBUG
+			e = e ?? throw new System.ArgumentNullException( nameof( e ) );
+#endif
 
 			var output = new System.Text.StringBuilder();
 			output = output.Append( "User: " );
