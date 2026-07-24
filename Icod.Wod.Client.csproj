@@ -19,10 +19,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
+		<LangVersion>13.0</LangVersion>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<Company>Icod</Company>
 		<Title>Icod.Wod.Client</Title>
 		<Product>Icod.Wod.Client</Product>
-		<Copyright>Copyright (C) 2025  Timothy J. Bruce</Copyright>
+		<Copyright>Copyright (C) 2026  Timothy J. Bruce</Copyright>
 		<Description>Icod.Wod.Client.exe interprets and executes Icod.Wod schematic files.</Description>
 		<AssemblyVersion>4.0.0.0</AssemblyVersion>
 		<Version>4.0.0.0</Version>
@@ -41,7 +43,7 @@
 		<TargetFrameworkProfile>
 		</TargetFrameworkProfile>
 		<FileAlignment>512</FileAlignment>
-		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
 		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<NuGetPackageImportStamp>
@@ -122,16 +124,21 @@
 		<Reference Include="System.Configuration" Condition=" '$(TargetFramework)' != 'net462' " />
 		<Reference Include="System.Data" />
 		<Reference Include="System.Data.OracleClient" />
+		<Reference Include="System.Text.Json" />
 		<Reference Include="System.Xml" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.5" Condition=" '$(TargetFramework)' != 'net461' " />
 		<PackageReference Include="Microsoft.VisualStudio.SlowCheetah" Version="4.0.50">
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
-		<PackageReference Include="Npgsql" Version="8.0.7" />
-		<PackageReference Include="Oracle.ManagedDataAccess" Version="23.8.0" />
+		<PackageReference Include="Npgsql" Version="8.0.7">
+		  <TreatAsUsed>true</TreatAsUsed>
+		</PackageReference>
+		<PackageReference Include="Oracle.ManagedDataAccess" Version="23.8.0">
+		  <TreatAsUsed>true</TreatAsUsed>
+		</PackageReference>
+		<PackageReference Include="System.Formats.Asn1" Version="9.0.5" />
 	</ItemGroup>
 	<ItemGroup>
 		<EditorConfigFiles Remove=".editorconfig" />
