@@ -1,17 +1,12 @@
 Deployment Packages/*
-Documents/*
-bin/*
-obj/*
-packages/*
+[Dd]eployment Packages/*
+[Dd]ocuments/*
+[Bb]in/*
+[Oo]bj/*
+[Pp]ackages/*
+[Pp]roperties/*
 _bin_deployableAssemblies/*
 .vs/*
-/Deployment Packages/*
-/Documents/*
-/bin/*
-/obj/*
-/packages/*
-/_bin_deployableAssemblies/*
-/.vs/*
 *.user
 *.suo
 *.vssscc
